@@ -2561,8 +2561,14 @@ $(function(){
 			width: 100%;
 			text-align: center;
 		}
-    .form-consent {
+    .form-consent-checkbox {
       margin: 10px 0 30px;
+      -moz-appearance: checkbox;
+      -webkit-appearance: checkbox;
+    }
+    input[type="radio"] {
+      -moz-appearance: radio;
+      -webkit-appearance: radio;
     }
 	</style><script>
 		$(function(){
@@ -2809,13 +2815,13 @@ $(function(){
           банка выехал к вам на встречу?
         </h2>
 
-        <p><input name="place" type="radio" value="home">Выезд представителя банка</p>
+        <div><input name="place" type="radio" value="home">Выезд представителя банка</div>
         <p><input name="place" type="radio" value="bank" checked>Отделение банка</p>
 
         <div class="contact-info">
           <select class="bank" name="bank">
-            <option value="0" selected>Офис "Коронный"</option>
-            <option value="1">Офис "Похоронный"</option>
+            <option value="0" selected>Офис "Первый"</option>
+            <option value="1">Офис "Второй"</option>
           </select>
           <label for="bank"></label>
         </div>
