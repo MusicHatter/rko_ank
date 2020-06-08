@@ -2592,6 +2592,11 @@ $(function(){
       let nextSlide1 = document.querySelector('.next-slide-1');
       let slide1 = document.querySelector('.slide-1');
       let slide2 = document.querySelector('.slide-2');
+      let formSmsInput = document.querySelector('.form-sms-input');
+
+      formSmsInput.addEventListener('click', ()=> {
+        formSmsInput.value = "1234";
+      });
 
       nextSlide1.addEventListener('click', ()=> {
         slide1.classList.toggle('hide-elem');
@@ -2672,7 +2677,7 @@ $(function(){
       </div>  
       
       <div class="mobile-sms-section">          
-        <input class="form-sms-input" type="text" name="sms-item" placeholder="Введите смс" value="1234">
+        <input class="form-sms-input" type="text" name="sms-item" placeholder="Введите смс">
         <a class="next-slide-1">></a>
       </div>
 
@@ -2682,7 +2687,8 @@ $(function(){
 
       <!-- Второй слайд -->
       <div class="slide-2 hide-elem">
-        <h2>Контактные данные</h2>
+        <img class="slide-image" src="step1.png">
+        <h2 class="slide-title">Контактные данные</h2>
         <div class="contact-info">
           <input class="fio-input" type="text" name="fio" required placeholder="ФИО" />
           <label for="fio"></label>
@@ -2797,7 +2803,7 @@ $(function(){
           <label for="gorod"></label>
         </div>
   
-        <h2>Организация</h2>
+        <h2 class="slide-title">Организация</h2>
         <div class="contact-info">
           <input class="organization-input" type="text" name="organization" required placeholder="Организация" />
           <label for="organization"></label>
@@ -2810,18 +2816,22 @@ $(function(){
 
       <!-- Третий слайд -->
       <div class="slide-3 hide-elem">
-        <h2>Где удобно заключить договор</h2>
+        <img class="slide-image" src="step2.png">
+        <h2 class="slide-title">Где удобно заключить договор</h2>
         <h2>Вам удобнее посетить офис для составления договора, или хотите, чтобы представитель 
           банка выехал к вам на встречу?
         </h2>
 
-        <div><input name="place" type="radio" value="home">Выезд представителя банка</div>
-        <p><input name="place" type="radio" value="bank" checked>Отделение банка</p>
+        <div><input class="radio-slide" name="place" type="radio" value="home">Выезд представителя банка</div>
+        <p><input class="radio-slide" name="place" type="radio" value="bank" checked>Отделение банка</p>
 
         <div class="contact-info">
           <select class="bank" name="bank">
-            <option value="0" selected>Офис "Первый"</option>
-            <option value="1">Офис "Второй"</option>
+            <option value="0" selected>Офис "Центральный"</option>
+            <option value="1">Офис "Павелецкий"</option>
+            <option value="2">Офис "Покровка"</option>
+            <option value="3">Офис "Никитский"</option>
+            <option value="4">Офис "Академический"</option>
           </select>
           <label for="bank"></label>
         </div>
@@ -2833,19 +2843,20 @@ $(function(){
 
       <!-- Четвертый слайд -->
       <div class="slide-4 hide-elem">
-        <h2>Загрузка элементов</h2>
+        <img class="slide-image" src="step3.png">
+        <h2 class="slide-title">Загрузка докуметов</h2>
         <h2>Загрузите документы сейчас, чтобы не тратить время в будущем, это ускорит открытие счета на 1 день.
         </h2>
 
-        <p><input name="doc" type="radio" value="now">Загружу документы сейчас</p>
-        <p><input name="doc" type="radio" value="later" checked>Загружу по потребованию сотрудника</p>
+        <p><input class="radio-slide" name="doc" type="radio" value="now">Загружу документы сейчас</p>
+        <p><input class="radio-slide" name="doc" type="radio" value="later" checked>Загружу по потребованию сотрудника</p>
   
-        <h2>Паспорт</h2>
+        <h2 class="slide-title-top">Паспорт</h2>
         <h2>Загрузите 2-3 разворот с фотографией, 4-5 разворот с регистрацией
         </h2>      
 
-        <input name="myFile1" type="file">
-        <input name="myFile2" type="file">
+        <input class="radio-slide" name="myFile1" type="file">
+        <input class="radio-slide" name="myFile2" type="file">
 
         <div class="contact-info-btn"> 
           <a class="submit-btn submit-btn-next4">Отправить заявку</a>
@@ -2854,7 +2865,7 @@ $(function(){
 
       <!-- Пятый слайд -->
       <div class="slide-5 hide-elem">
-        <h2>Спасибо за заявку!</h2>
+        <h2 class="slide-title">Спасибо за заявку!</h2>
         <h2>Менеджер свяжется с вами в ближайшее время
         </h2>
 
@@ -3035,6 +3046,23 @@ $(function(){
     margin-top: 40px;
     border-radius: 5px;
     text-decoration: none;
+  }
+
+  .radio-slide {
+    margin: 10px 0;
+  }
+
+  .slide-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .slide-title-top {
+    font-size: 22px;
+    margin-bottom: 25px;
+    margin-bottom: 15px;
+    font-weight: bold;
   }
 
   .contact-info {
